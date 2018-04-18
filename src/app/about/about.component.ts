@@ -13,7 +13,7 @@ export class AboutComponent implements OnInit {
   constructor(private _leaderservice: LeaderService) { }
 
   ngOnInit() {
-    this.leaders = this._leaderservice.getLeaders();
+    this._leaderservice.getLeaders().then(leaders => this.leaders = leaders);
   }
 
 }
